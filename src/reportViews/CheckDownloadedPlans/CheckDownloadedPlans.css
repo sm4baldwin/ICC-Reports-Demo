@@ -1,0 +1,5 @@
+.report-border {
+    border: solid .1rem lightblue;
+    width: 70vw;
+    margin: 2rem auto;
+}
