@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import CheckDownloadedPlansReport from './reportViews/CheckDownloadedPlans/CheckDownloadedPlans'
 import Button from './Components/Button/Button'
@@ -13,12 +13,16 @@ function App() {
     orgOrPub === "Org" ? setOrgID(newID) : setPubID(newID)
   }
 
+  useEffect( () => {
+    setPubID(9999)
+  }, [orgID])
+
   return (
     <div className="App">
       <h1>Demonstration of stored procedures</h1>
       <div className="flex-container">
-        <Dropdown queryParameter={''} updateResult={updateResult} orgOrPub="Org"/>
-        <Dropdown queryParameter={'?OrgID='+orgID} updateResult={updateResult} orgOrPub="Plan"/>
+        <Dropdown queryParameter={''} updateResult={updateResult} orgOrPub="Org" ID={orgID}/>
+        <Dropdown queryParameter={'?OrgID='+orgID} updateResult={updateResult} orgOrPub="Plan" ID={pubID}/>
       </div>
       <CheckDownloadedPlansReport orgID={orgID} pubID={pubID}/>
 

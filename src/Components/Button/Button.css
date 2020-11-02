@@ -1,7 +1,7 @@
 .button {
     border-radius: .3rem;
     border: .2rem rgb(39, 37, 37) solid;
-    box-shadow: rgb(68, 67, 67) .1rem .1rem .05rem .05rem;
+    box-shadow: rgb(179, 176, 176) .1rem .1rem .05rem .05rem;
     width: 50%;
     margin: 1rem auto;
 }

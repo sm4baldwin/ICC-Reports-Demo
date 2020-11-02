@@ -1,5 +1,22 @@
 .report-border {
     border: solid .1rem lightblue;
-    width: 70vw;
+    min-width: 70vw;
     margin: 2rem auto;
+}
+
+.table {
+    margin: 0rem auto;
+    border-collapse: collapse;
+    border-color: gray;
+}
+
+.table-header {
+    font-size: .8rem;
+    border: rgb(145, 142, 142) 1px solid;
+    padding: 1rem;
+}
+
+.table-row {
+    font-size: .6rem;
+    border: rgb(145, 142, 142) 1px solid;
 }

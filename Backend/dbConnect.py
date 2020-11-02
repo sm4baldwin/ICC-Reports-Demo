@@ -16,7 +16,6 @@ def runDBQuery(config, sql, isProc, procParams):
         ';DATABASE='+config['database']+';UID='+config['username']+';PWD='+config['password'])
     json_result = getJSONResult(sql, connection, isProc, procParams)
     connection.close()
-    print(json_result)
     return json_result
 
 

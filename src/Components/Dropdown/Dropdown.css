@@ -1,9 +1,10 @@
 .dropdown-container {
     margin: .1rem 0;
     padding: .1rem;
+    width: 50%;
 }
 
 .dropdown {
-    max-width: 80%;
-    border: 1px red solid;
+    width: 80%;
+    margin: .2rem 2rem;
 }

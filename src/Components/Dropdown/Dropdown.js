@@ -5,7 +5,6 @@ import axios from 'axios'
 export default function Dropdown(props) {
     const [items, setItems] = useState([{ label: "Loading ...", value: "" }])
     const [loading, setLoading] = useState(true)
-    const [selectedItem, setSelectedItem] = useState(205)
 
     useEffect( () => {
       let unmounted = false
@@ -25,21 +24,17 @@ export default function Dropdown(props) {
       return () => unmounted = true
     }, [props.queryParameter])
 
-    useEffect( () => {
-      console.log(selectedItem)
-    }, [selectedItem])
-
     return (
       <div className="dropdown-container">
         <select 
           disabled={loading}
-          value={selectedItem}
+          value={props.ID}
           onChange={e => {
-            setSelectedItem(e.currentTarget.value)
-            props.updateResult(props.orgOrPub, selectedItem)
+            props.updateResult(props.orgOrPub, e.currentTarget.value)
           }}
           className="dropdown"
         >
+          <option style={{display: 'none'}}>Select a plan: </option>
           {items.map(({ label, value }) => (
             <option key={value} value={value}>
               {props.orgOrPub} ID: {value}, {label}
