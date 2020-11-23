@@ -1,33 +1,53 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import {Route, Switch} from 'react-router-dom'
+import { ThemeProvider } from '@material-ui/core/styles'
+import { theme } from './Contexts/ThemeContext'
+
+import { OrgPubContextProvider } from './Contexts/OrgPubContext'
+
+import { NavBar } from './Components/Organisms/NavBar/NavBar'
+import { Pages } from './Assets/Pages'
+
+import HomePage from './reportViews/Home'
+import CDPR from './reportViews/CDPR'
+import Platform from './reportViews/Platform'
+import UserDownloadHistory from './reportViews/UserDownloadHistory'
+
 import './App.css';
-import CheckDownloadedPlansReport from './reportViews/CheckDownloadedPlans/CheckDownloadedPlans'
-import Button from './Components/Button/Button'
-import Dropdown from './Components/Dropdown/Dropdown'
 
 function App() {
 
-  const [orgID, setOrgID] = useState(205)
-  const [pubID, setPubID] = useState(184)
-
-  const updateResult = (orgOrPub, newID) => {
-    orgOrPub === "Org" ? setOrgID(newID) : setPubID(newID)
-  }
-
-  useEffect( () => {
-    setPubID(9999)
-  }, [orgID])
+  
 
   return (
-    <div className="App">
-      <h1>Demonstration of stored procedures</h1>
-      <div className="flex-container">
-        <Dropdown queryParameter={''} updateResult={updateResult} orgOrPub="Org" ID={orgID}/>
-        <Dropdown queryParameter={'?OrgID='+orgID} updateResult={updateResult} orgOrPub="Plan" ID={pubID}/>
-      </div>
-      <CheckDownloadedPlansReport orgID={orgID} pubID={pubID}/>
+    <ThemeProvider theme={theme}>
+      <OrgPubContextProvider>
+        <NavBar pages={Pages}/>
+        <Switch>
+          <Route path='/' exact>
+            <HomePage />
+          </Route>
+          <Route path='/CheckDownloadedPlansReport'>
+            <CDPR />
+          </Route>
+          <Route path='/PlatformReport'>
+            <Platform />
+          </Route>
+          <Route path='/UserDownloadHistoryReport'>
+            <UserDownloadHistory />
+          </Route>
+        </Switch>
 
-      <Button val="test" />
-    </div>
+        {/* <h1>Demonstration of stored procedures</h1>
+        <div className="flex-container">
+          <Dropdown queryParameter={''} updateResult={updateResult} orgOrPub="Org" ID={orgID}/>
+          <Dropdown queryParameter={'?OrgID='+orgID} updateResult={updateResult} orgOrPub="Plan" ID={pubID}/>
+        </div>
+        <CheckDownloadedPlansReport orgID={orgID} pubID={pubID}/>
+
+        <Button val="test" /> */}
+      </OrgPubContextProvider>
+    </ThemeProvider>
   );
 }
 

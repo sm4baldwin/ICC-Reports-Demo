@@ -9,13 +9,15 @@ def getJSONResult(sql, connection, isProc, params):
         df_result = pd.read_sql_query(sql, connection)
     else:
         df_result = pd.read_sql_query(sql, connection, params=(params))
-    return df_result.to_json()
+
+    return df_result.to_json(orient='split')
 
 def runDBQuery(config, sql, isProc, procParams):
     connection = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+config['server']+ \
         ';DATABASE='+config['database']+';UID='+config['username']+';PWD='+config['password'])
     json_result = getJSONResult(sql, connection, isProc, procParams)
     connection.close()
+    
     return json_result
 
 

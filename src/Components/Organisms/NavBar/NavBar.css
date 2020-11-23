@@ -1,0 +1,17 @@
+.root {
+    flex-grow: 1;
+}
+
+.menuButton {
+    margin-right: 2rem;
+    flex-grow: 1;
+}
+
+.title {
+    flex-grow: 1
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}

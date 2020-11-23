@@ -4,6 +4,18 @@ def checkDownloadedPlansReport(OrgID, PubID):
     isProc = True
     return [query, isProc, params]
 
+def platformReport(OrgID):
+    query = "EXEC dbo.procReportPlatformCount @OrgID=? ;"
+    params = [OrgID]
+    isProc = True
+    return [query, isProc, params]
+
+def userDownloadHistory(OrgID):
+    query = "EXEC dbo.procICOemailAuthDownloadAudit @OrgID=? ;"
+    params = [OrgID]
+    isProc = True
+    return [query, isProc, params]
+
 def dropdownRouteOrgID():
     query = "SELECT OrgID as ID, OrgName as Label FROM Organization;"
     params = False

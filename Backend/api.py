@@ -2,6 +2,8 @@ import time
 from flask import Flask, request
 
 from Assets.queriesAndProcs import checkDownloadedPlansReport
+from Assets.queriesAndProcs import platformReport
+from Assets.queriesAndProcs import userDownloadHistory
 from Assets.queriesAndProcs import dropdownRouteOrgID
 from Assets.queriesAndProcs import dropdownRoutePubID
 from dbConnect import runDBQuery
@@ -21,6 +23,18 @@ def checkDownloadedPlansRoute():
     OrgID = request.args.get('OrgID')
     PubID = request.args.get('PubID')
     query = checkDownloadedPlansReport(OrgID, PubID)
+    return runDBQuery(config, query[0], query[1], query[2])
+
+@app.route('/PlatformReport')
+def platformReportRoute():
+    OrgID = request.args.get('OrgID')
+    query = platformReport(OrgID)
+    return runDBQuery(config, query[0], query[1], query[2])
+
+@app.route('/UserDownloadHistoryReport')
+def userDownloadHistoryRoute():
+    OrgID = request.args.get('OrgID')
+    query = userDownloadHistory(OrgID)
     return runDBQuery(config, query[0], query[1], query[2])
 
 @app.route('/dropdown')
