@@ -24,11 +24,11 @@ export const NavBar = (props) => {
     const classes = useStyles()
     let location = useLocation()
     return (
-        <div className='root'>
+        <div className='NavBar-root'>
             <AppBar position="static">
                 <Toolbar variant='dense'>
-                    <div className='flex-column title'>
-                        <Typography variant="h6">
+                    <div className='flex-column NavBar-title'>
+                        <Typography variant="subtitle2">
                             {orgID ? `OrgID: ${orgID}` : ''}
                         </Typography>
                         <Typography variant='subtitle2'>
@@ -36,7 +36,7 @@ export const NavBar = (props) => {
                         </Typography>
                     </div>
                     <ButtonGroup
-                        variant='text' color='inherit' aria-label='text inherit button group' className='menuButton' disableRipple={true}
+                        variant='text' color='inherit' aria-label='text inherit button group' className='NavBar-menuButton' disableRipple={true}
                     >
                         {props.pages.map((page, i) => {
                             return (

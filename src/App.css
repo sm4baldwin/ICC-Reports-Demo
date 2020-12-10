@@ -1,15 +1,9 @@
 .App {
   text-align: center;
-  border: solid 2px lightblue;
-  margin: 1rem 1rem;
+  min-width: '850px';
 }
 
-.flex-container {
-  display: flex;
-  align-content: center;
-  justify-content: left;
-  max-width: 100%;
-  min-width: 80%;
-  margin: 0 auto;
+body {
+  min-width: '850px';
 }
 

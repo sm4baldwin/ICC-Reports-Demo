@@ -1,11 +1,19 @@
-.report-border {
+.Platform-report-border {
     max-width: 90%;
+    margin: 2rem auto;
 }
 
-.table {
+.Platform-table {
     max-width: 100%;
 }
 
-.table-row {
-    /* text-align: center */
+.Platform-table-row {
+    font-size: .8rem;
+    border: rgb(145, 142, 142) 1px solid;
+}
+
+.Platform-table-header {
+    font-size: 1rem;
+    border: rgb(145, 142, 142) 1px solid;
+    padding: .3em;
 }

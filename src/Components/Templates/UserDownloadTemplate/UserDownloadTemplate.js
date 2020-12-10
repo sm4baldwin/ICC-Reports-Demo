@@ -35,18 +35,16 @@ export default function(props) {
     let orgsPlans = Array.from(set).map(JSON.parse)
     let orgSet = new Set(orgsPlans.map( (row) => row[0]))
     let orgArray = Array.from(orgSet)
-    console.log(props.data)
 
     return (
-        <div className="report-border">
-            <table className="table">
+        <div className="UserDownload-report-border">
+            <table className="UserDownload-table">
                 <tbody>
                     <tr>
                         {
                             oldColumns.map((column, i) => {
                                     return (
                                         <th
-                                            className="table-header"
                                             key={i}
                                             scope="col"
                                             style={{backgroundColor: theme.palette.primary.main, 

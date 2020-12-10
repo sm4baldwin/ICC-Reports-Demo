@@ -1,31 +1,31 @@
-.report-border {
+.CDPR-report-border {
     width: 50rem;
     min-width: 51rem;
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: .5rem
+    padding: .5rem;
 }
 
-.table {
+.CDPR-table {
     margin: 0rem auto;
     border-collapse: collapse;
     border-color: gray;
 }
 
-.table-header {
+.CDPR-table-header {
     font-size: .8rem;
     border: rgb(145, 142, 142) 1px solid;
     padding: 1rem;
 }
 
-.table-row {
+.CDPR-table-row {
     font-size: .6rem;
     border: rgb(145, 142, 142) 1px solid;
 }
 
-.button {
+.CDPR-button {
     max-width: 10rem;
     margin-right: 100rem;
 }

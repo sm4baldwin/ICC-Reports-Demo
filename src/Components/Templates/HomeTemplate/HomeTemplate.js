@@ -1,12 +1,41 @@
 import React from 'react'
 
-export default function(props) {
+import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
+import { useTheme } from '@material-ui/core/styles'
+import './HomeTemplate.css'
 
+
+export default function(props) {
+    const theme = useTheme()
     return (
-        <div>
-            <h1>This is the Home Page of the demo, where I layout my analysis so far</h1>
-            <h3>I will show both the old version, with comments/criticisms/feedback and formatted to look similar to current ICC reports,
-                 and then highlight ideas for an improved version, along with a "Dashboard" integration option</h3>
-        </div>
+        <Paper elevation={3} className='HomeContent'>
+            <Typography variant='h4'>
+                {props.content.intro}
+            </Typography><br></br>
+            <br></br>
+            <Typography variant='h6'>
+                {props.content.section1.title}
+            </Typography><br></br>
+            {props.content.section1.paragraphs.map((item, i) => {
+                return (
+                    <Typography variant='subtitle2' key={i}>
+                        {item}
+                    </Typography>
+                )
+            })}
+            <br></br>
+            <Typography variant='h6'>
+                {props.content.section2.title}
+            </Typography>
+            <br></br>
+            {props.content.section2.paragraphs.map((item, i) => {
+                return (
+                    <Typography variant='subtitle2' key={i} className='new-paragraph'>
+                        {item}
+                    </Typography>
+                )
+            })}
+        </Paper>
     )
 }

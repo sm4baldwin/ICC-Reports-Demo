@@ -1,0 +1,18 @@
+.list-box {
+    padding: 0 2em 2em;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: 2rem;
+    margin-top: 2rem
+}
+
+.list-div {
+    text-align: left;
+    list-style-position: inside;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+}

@@ -1,3 +1,8 @@
-.table {
+.UserDownload-table {
     border: solid 1px rgb(194, 194, 194);
+}
+
+.UserDownload-report-border {
+    width: 100%;
+    margin-top: 2em;
 }

@@ -7,13 +7,11 @@ import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <CssBaseline>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </CssBaseline>
-  </React.StrictMode>,
+  <CssBaseline>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </CssBaseline>,
   document.getElementById('root')
 );
 

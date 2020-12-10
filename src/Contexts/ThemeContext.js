@@ -18,5 +18,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
       'md': 800, 
       'lg': 1200, 
       'xl': 1700
-    }
+    },
+    
   }), {breakpoints: ['xs', 'sm', 'md', 'lg', 'xl'], factor: 2})

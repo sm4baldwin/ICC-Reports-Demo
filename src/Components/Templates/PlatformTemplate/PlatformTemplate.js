@@ -27,8 +27,8 @@ export default function(props) {
     }
 
     return (
-        <div className="report-border">
-            <table className="table">
+        <div className="Platform-report-border">
+            <table className="Platform-table">
                 <tbody>
                     <tr>
                         {
@@ -42,9 +42,9 @@ export default function(props) {
                             oldColumns.map((column, i) => {
                                     return (
                                         <th
-                                            className="table-header"
                                             key={i}
                                             scope="col"
+                                            className='Platform-table-header'
                                             style={{backgroundColor: theme.palette.primary.main, 
                                                 color: theme.palette.common.white}}
                                         >
@@ -58,13 +58,12 @@ export default function(props) {
                     {
                         props.data.map( (row, j) => {
                             return (
-                                <tr key={j}>
+                                <tr key={j} className='Platform-table-row'>
                                     {
                                         row.map((value, k) => {
                                             if (props.indexList.includes(k)) {
                                                 return (
                                                     <td
-                                                        className="table-row"
                                                         key={k}
                                                         style={rowStyle(j, k)}
                                                     >

@@ -12,40 +12,34 @@ import HomePage from './reportViews/Home'
 import CDPR from './reportViews/CDPR'
 import Platform from './reportViews/Platform'
 import UserDownloadHistory from './reportViews/UserDownloadHistory'
+import Dashboard from './reportViews/Dashboard'
 
 import './App.css';
 
 function App() {
-
-  
-
   return (
     <ThemeProvider theme={theme}>
       <OrgPubContextProvider>
-        <NavBar pages={Pages}/>
-        <Switch>
-          <Route path='/' exact>
-            <HomePage />
-          </Route>
-          <Route path='/CheckDownloadedPlansReport'>
-            <CDPR />
-          </Route>
-          <Route path='/PlatformReport'>
-            <Platform />
-          </Route>
-          <Route path='/UserDownloadHistoryReport'>
-            <UserDownloadHistory />
-          </Route>
-        </Switch>
-
-        {/* <h1>Demonstration of stored procedures</h1>
-        <div className="flex-container">
-          <Dropdown queryParameter={''} updateResult={updateResult} orgOrPub="Org" ID={orgID}/>
-          <Dropdown queryParameter={'?OrgID='+orgID} updateResult={updateResult} orgOrPub="Plan" ID={pubID}/>
+        <div className='App'>
+          <NavBar pages={Pages}/>
+          <Switch>
+            <Route path='/' exact>
+              <HomePage />
+            </Route>
+            <Route path='/CheckDownloadedPlansReport'>
+              <CDPR />
+            </Route>
+            <Route path='/PlatformReport'>
+              <Platform />
+            </Route>
+            <Route path='/UserDownloadHistoryReport'>
+              <UserDownloadHistory />
+            </Route>
+            <Route path='/Dashboard'>
+              <Dashboard />
+            </Route>
+          </Switch>
         </div>
-        <CheckDownloadedPlansReport orgID={orgID} pubID={pubID}/>
-
-        <Button val="test" /> */}
       </OrgPubContextProvider>
     </ThemeProvider>
   );

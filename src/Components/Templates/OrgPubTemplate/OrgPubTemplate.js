@@ -13,7 +13,7 @@ export default function(props) {
     }
 
     return (
-        <Box>
+        <Box className='NavBox'>
             <Dropdown
                 value={props.orgID}
                 loading={props.orgLoading}

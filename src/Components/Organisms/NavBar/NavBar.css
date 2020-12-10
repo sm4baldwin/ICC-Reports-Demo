@@ -1,13 +1,14 @@
-.root {
+.NavBar-root {
     flex-grow: 1;
+    margin-bottom: 2em;
 }
 
-.menuButton {
+.NavBar-menuButton {
     margin-right: 2rem;
     flex-grow: 1;
 }
 
-.title {
+.NavBar-title {
     flex-grow: 1
 }
 
